@@ -1,0 +1,3 @@
+[submodule "full-text-rss"]
+	path = full-text-rss
+	url = https://bitbucket.org/fivefilters/full-text-rss
