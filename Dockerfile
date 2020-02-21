@@ -1,6 +1,7 @@
 FROM debian:buster-slim
 EXPOSE 80/tcp
 RUN apt-get update && apt-get install -y nginx php-common \
+coreutils \
 php-fpm \ 
 php7.3-cli \
 php7.3-common \ 
@@ -17,5 +18,5 @@ COPY fulltextrss /etc/nginx/sites-available
 RUN mkdir /run/php && rm /etc/nginx/sites-enabled/default && \
 ln -s /etc/nginx/sites-available/fulltextrss /etc/nginx/sites-enabled/fulltextrss && \
 chown -R www-data:www-data /var/www/full-text-rss
-ENTRYPOINT /usr/sbin/php-fpm7.3 --fpm-config /etc/php/7.3/fpm/php-fpm.conf && \
-/usr/sbin/nginx -g 'daemon on; master_process on;'
+COPY start.sh /usr/local/bin
+ENTRYPOINT /usr/local/bin/start.sh
