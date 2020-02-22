@@ -7,4 +7,4 @@ submodule:
 
 .PHONY: docker
 docker: submodule
-	docker build -t textmode .
+	docker build -t full-text-rss .
