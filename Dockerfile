@@ -2,6 +2,7 @@ FROM debian:buster-slim
 EXPOSE 80/tcp
 RUN apt-get update && apt-get install -y nginx php-common \
 coreutils \
+moreutils \
 php-fpm \ 
 php7.3-cli \
 php7.3-common \ 
