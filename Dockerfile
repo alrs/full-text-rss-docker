@@ -13,7 +13,8 @@ php7.3-mbstring \
 php7.3-opcache \
 php7.3-readline \ 
 php7.3-tidy \ 
-php7.3-xml
+php7.3-xml \
+php7.3-intl
 ADD full-text-rss/ /var/www/full-text-rss
 COPY fulltextrss /etc/nginx/sites-available
 RUN mkdir /run/php && rm /etc/nginx/sites-enabled/default && \
