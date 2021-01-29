@@ -1,0 +1,8 @@
+[Unit]
+Description=Full Text RSS
+
+[Service]
+ExecStart=docker run -p 127.0.0.1:9999:80 -e RSSMAX=20 -d full-text-rss
+
+[Install]
+WantedBy=default.target
